@@ -2,6 +2,8 @@
 - My implementation of the different data structures I am learning to be familiarized with them
 - Data structures are implemented in cpp, python, and hopefully Java and Javascript.
 
+<h1>Table of Content</h1>
+
 - [Data Structures](#data-structures)
   - [Python](#python)
   - [CPP](#cpp)
