@@ -17,7 +17,7 @@ $G = (V, E)$
 
 Consider the following graph:
 
-![graph](../images/graph.png)
+![graph](../../images/graph.png)
 
 * The vertices are `V = {v1, v2, v3, v4, v5, v6, v7, v8}`
 

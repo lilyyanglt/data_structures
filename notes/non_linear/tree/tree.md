@@ -50,3 +50,5 @@
   * Is a tree with at most 2 children
 * Fenwick Tree
 * Minimum Spanning Trees
+* Binary Heap
+* Heap 

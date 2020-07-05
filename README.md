@@ -25,6 +25,8 @@
 
 ## CPP
 
+Note: I will not be implementing using templates for the data structures. All structures will just be treated with the same data type (int) for ease of learning. This will greatly reduce the complexity of implementing the data structures and just learning about them in general. 
+
 **Linear**
 
 | name | constructor | methods | building block |

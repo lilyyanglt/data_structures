@@ -1,7 +1,7 @@
-//testing template usage to implement a linkedList
+#ifndef SINGLY_LINKED_LIST_H
+#define SINGLY_LINKED_LIST_H
 
-
-#include <iostream>
+#include 
 
 template <typename T>
 struct node {
