@@ -3,6 +3,7 @@
 - A heap is a **tree-based** Data structure that satisfies the heap property (also known as heap invariant)
 - the heap property states: If A is a parent node of B, then A is ordered with respect to B for all nodes A, B in the heap (what this means in plain english is that the value of the parent node is always greater than or equal to all nodes or the other way to around where the parent node is less than or equal )
 - heaps in general could have many different number of branches
+- heaps are complete binary trees
 
 **Min Heap**
 - parent node is always lesser than equal to its children
@@ -30,8 +31,16 @@ Examples:
 
 ## Types of Heaps
 
-### Fibonacci Heap
+### Min heap
+- main operations: extract_min and insert
 
+* `insert`: always insert at the bottom to maintain the complete binary tree property. Then, fix the tree by swapping the new element with its parent, until it finds an appropriate spot for the element; this takes O(log n) - n being the total number of nodes in the heap
+* `extract_min`: is easy because the min is always at the top. Once the min is removed, you need to replace the root with something else. You can replace it with the last element on the heap and then bubble it down. You will have to choose the smallest value from either the left or right child to maintain the heap invariant. This takes O(logn)
+
+This image shows the how element bubbling down to a position that will maintain heap property. (Source: CTCI) 
+![link](../../images/heap_extract_min.png)
+
+### Fibonacci Heap
 
 **Differences between binomial heaps and binary heaps**
 https://stackoverflow.com/questions/6215485/what-is-the-difference-between-binary-heaps-and-binomial-heaps#:~:text=3%20Answers&text=The%20key%20difference%20between%20a,which%20is%20a%20binomial%20tree.

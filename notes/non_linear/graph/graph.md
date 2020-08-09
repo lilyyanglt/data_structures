@@ -6,6 +6,8 @@
 - you can have graphs that have both undirected and directed edges (complicated)
 - model and represent a variety of systems
 - made up of collections of objects/entities we call node/vertices
+- acyclic graph is one that's without cycles
+- If there's a path between every pair of vertices, it's called a connected graph. 
 
 
 $G = (V, E)$
@@ -34,4 +36,48 @@ Consider the following graph:
 - graphs can be used to represent any collection of objects having pairwise relationships
 
 1. Social Network (e.g faceook) - using undirected graphs - if you are my friend i am your friend too
-1. 
+
+
+## Comp sci representation of graphs
+
+### Adjacency List
+* The most common way to represent a graph
+* Each node (vertex) stores a list of adjacent vertices
+* in the case of an undirected graph, (a,b) would be stored twice 
+
+```cpp
+
+class Graph {
+  private:
+    Node nodes[size];
+}
+
+class Node {
+  private: 
+    int data;
+    Node children[size];
+}
+
+```
+* you might also be able to just use an array or a hashtable of tasks to store the ajacency list:
+
+{0: [1]
+1: [2]
+2: [0,3],
+3: [2]}
+
+* but always a good practice to use node classes instead of using this. 
+
+
+### Adjacency Matrix
+- using an NxN boolean matrix to represent an edge between node i to node j. N being the number of nodes
+- the same graph algorithms that are used on adjacency lists (bfs) can be performed with ajacency matrices, but they might be somewhat less efficient. In the adjacency list representation, you can easily iterate through the neighbors of a node, but in a matrix representation, you need to iteration through all the nodes to identify the nodes' neighbors. 
+
+![link](../../images/graph_01.png)
+
+| |0|1|2|3|
+|-|-|-|-|-|
+|0|0|1|0|0|
+|1|0|0|1|0|
+|2|1|0|0|0|
+|3|0|0|1|0|

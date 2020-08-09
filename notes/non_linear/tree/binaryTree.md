@@ -31,6 +31,8 @@
 - Difference between the height of left and right subtree for every node is not more than 1
 - difference = $|height of left subtree - height of right subtree|$
 - If there are N total nodes, the depth is roughly log(n) - n is the total number of nodes
+- A tree is balanced enough to ensure O(log n) times for insert and find operations, but not necessarily as balanced as it could be which is a perfect balanced tree where the difference in height is = 0
+- Common types of balanced trees are Red Black Trees and AVL trees.
 
 ## Implementation
 - dynamically create nodes with data, left pointer, right pointer
@@ -80,4 +82,57 @@ int f(int n) {
 ```
 * So in general, usually the compleixty of a binary tree, is O($branches^{depth}$) and depth is roughly height of a tree when it's complete or full binary tree
 
-## More to come
+## Binary Tree Traversal
+
+* There are 3 types of traversal: pre-order, in-order, and post-order, and the most common one is in-order.
+
+### in-order
+- in-order means to 'visit'( or print) the left branch, then the current node, and finally the right branch
+- when performed on a binary search tree, this is visiting the nodes in ascending order:
+
+     [4]
+  [2]   [5]
+[1][3] [6][7]
+
+[1,2,3,4,5,6,7]
+
+```cpp
+
+void inOrderTraversal(TreeNode *&node) {
+  if (node != nullptr) {
+    inOrderTraversal(node->left);
+    visit(node);
+    inOrderTraversal(node->right);
+  }
+}
+```
+
+### Pre-order traversal
+* pre-order visits the current node before it's child nodes
+* the root is always the node that's visited
+
+```cpp
+
+void inOrderTraversal(TreeNode *&node) {
+  if (node != nullptr) {
+    visit(node);
+    inOrderTraversal(node->left);
+    inOrderTraversal(node->right);
+  }
+}
+```
+
+### Post-order traversal
+* post-order visits the children nodes first before the current node
+* root is always last node visited
+
+```cpp
+
+void inOrderTraversal(TreeNode *&node) {
+  if (node != nullptr) {
+    inOrderTraversal(node->left);
+    inOrderTraversal(node->right);
+    visit(node);
+  }
+}
+```
