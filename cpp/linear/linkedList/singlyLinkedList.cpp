@@ -6,17 +6,7 @@
 
 
 #include <iostream>
-
-struct Node {
-  int data;
-  Node *next;
-  
-  Node(int d) {
-    data = d; 
-    next = nullptr; 
-  }
-
-};
+#include "../../src/include/Node.h"
 
 class LinkedList {
  private:
@@ -43,7 +33,7 @@ class LinkedList {
  		
  		} else {
  			
- 			//you want temp to hold the address of the head node  
+ 			//you want temp to hold the address of the head node 
  			Node *temp = head;
  			while(temp->next != nullptr) {
  				temp = temp->next;
@@ -61,40 +51,6 @@ class LinkedList {
   
     newNode->next = head;
     head = newNode;
- 	}
-
-  /*
-   * Time Complexity: O(n) 
-   */
- 	void printData() {
- 		if(this->isEmpty()) {
- 			std::cout << "list is empty" << std::endl;
- 			return;
- 		}
-
- 		Node *temp = head;
- 		while (temp != nullptr) {
- 			std::cout << temp->data << " ";
- 			temp = temp->next;
- 		}
- 		std::cout << "\n";
- 	}
-
-  /*
-   * @return total element of the linkedlist
-  */
- 	int length() {
-
- 		int count = 0;
-
- 		Node *temp = head;
-
- 		while(temp != nullptr) {
- 		 	count++;
- 			temp = temp->next; //this is very important because if you don't your loop wil never end;
- 		}
-
- 		return count;
  	}
 
   /*
@@ -129,7 +85,42 @@ class LinkedList {
      }
   }
 
+  /*
+   * Delete the first node that matches value of interest
+   * Time Complexity: O(n)
+  */
+
+  void remove(int value) {
+    Node *prev = nullptr;
+    Node *current = head;
+    
+    /* 1. traverse the list until current->value == value and current == nullptr
+          1.1 the loop will only continue only if current->value != value and current != nullptr
+       3. Each iteration, set prev => current, and current => current->next
+       4. If current is null, nothing to delete
+       5. If prev is null, the first node is to be deleted, update head => current->next
+       6. If not 4 or 5, then prev->next = current->next
+    */
+   
+    while (current != nullptr && current->data != value) {
+      std::cout << current->data << std::endl;
+      prev = current;
+      current = current->next;
+    }
+
+    if (current == nullptr) {
+      throw "Value not found";
+    } else if (prev == nullptr) {
+      head = current->next;
+    } else {
+      prev->next = current->next;
+    }
+
+     delete current;
+  }
+
   /* 
+   * Reverses a linked list iteratively
    * Time Complexity: O(n)
   */
 
@@ -161,6 +152,40 @@ class LinkedList {
     }
 
   }
+
+  /*
+   * Time Complexity: O(n) 
+   */
+ 	void printData() {
+ 		if(this->isEmpty()) {
+ 			std::cout << "list is empty" << std::endl;
+ 			return;
+ 		}
+
+ 		Node *temp = head;
+ 		while (temp != nullptr) {
+ 			std::cout << temp->data << " ";
+ 			temp = temp->next;
+ 		}
+ 		std::cout << "\n";
+ 	}
+
+  /*
+   * @return total element of the linkedlist
+  */
+ 	int length() {
+
+ 		int count = 0;
+ 		Node *temp = head;
+
+ 		while(temp != nullptr) {
+ 		 	count++;
+ 			temp = temp->next; //this is very important because if you don't your loop wil never end;
+ 		}
+
+ 		return count;
+ 	}
+
   
 };
 
@@ -181,8 +206,13 @@ int main() {
 
   std::cout << list.length() << std::endl; // should print 5
 
-  list.reverse();
-  list.printData(); // 20 10 3 5 55
+  try {
+    list.remove(54);
+  } catch (const char* msg) {
+    std::cerr << msg << std::endl;
+  }
+  
+  list.printData();
 
   return 0;
 }
