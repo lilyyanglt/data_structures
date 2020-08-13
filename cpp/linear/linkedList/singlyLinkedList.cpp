@@ -124,7 +124,7 @@ class LinkedList {
    * Time Complexity: O(n)
   */
 
-  void reverse() {
+  void reverseIter() {
     // use 3 pointers: prev, next, current
     /*
       1. initiate prev and next to null
@@ -151,6 +151,25 @@ class LinkedList {
       head = prev;
     }
 
+  }
+  
+  /*
+    Reverses the linkedList recursively
+    Time Complexity: The total number of recursive calls is porportional to length of list so O(n)
+    Space Complexity: O(n)
+  */
+  void reverseRecurs() {
+    Node *prev = head;
+    head = prev->next;
+    if (prev->next == nullptr) {
+      head = prev;
+      return;
+    } else {
+      reverseRecurs();
+      Node *temp = prev->next;
+      temp->next = prev;
+      prev->next = nullptr;
+    }
   }
 
   /*
@@ -212,6 +231,9 @@ int main() {
     std::cerr << msg << std::endl;
   }
   
+  list.printData();
+
+  list.reverseRecurs();
   list.printData();
 
   return 0;
