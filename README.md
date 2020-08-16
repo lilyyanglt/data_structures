@@ -1,13 +1,20 @@
 # Data Structures
-- My implementation of the different data structures I am learning to be familiarized with them
+- My implementation of the different data structures and the key operations I am learning to be familiarized with them
+- The tables below just makes it easier to navigate to the files and the operations I've implemented.
 - Data structures are implemented in cpp, python, and hopefully Java and Javascript.
 
 <h1>Table of Content</h1>
 
 - [Data Structures](#data-structures)
+  - [Summary of Complexity of each operation based on Structure](#summary-of-complexity-of-each-operation-based-on-structure)
   - [Python](#python)
   - [CPP](#cpp)
   - [Contribution and Review](#contribution-and-review)
+
+## Summary of Complexity of each operation based on Structure
+- special thanks to [gibsjose](https://github.com/gibsjose/cpp-cheat-sheet) for the image resource
+
+![link](notes/images/Data%20Structures.png)
 
 ## Python
 
@@ -38,7 +45,7 @@ Note: I will not be implementing using templates for the data structures. All st
 
 | link | constructor | methods | building block |
 | ---- | ----------- | ------- | -------------- |
-
+| [Binary Search Tree](cpp/non_linear/binarySearchTree/binarySearchTree.cpp) | BST() | <li>`add(int value)`</li> adds a node to the binary search tree <li>`getRoot()` returns a TreeNode pointer to the root</li><li>`min(TreeNode * r)` takes in a pointer variable and returns a TreeNode pointer variable of the minimum value in a tree</li><li>`max(TreeNode * r)` takes in a pointer variable and returns a treeNode pointer variable of the maximum value in the tree</li><li>`find(int value, TreeNode * root)` finds the value of interest in the tree and returns bool of whether the value exists </li><li>`remove(int value)` removes the value from the tree</li> | [TreeNode](cpp/src/include/TreeNode.h) |
 
 ## Contribution and Review
 * I am still learning so there might be mistakes or code could be written better. I would appreciate review and corrections from anyone. Please make a pull request!  
