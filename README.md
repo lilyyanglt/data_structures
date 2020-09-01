@@ -1,11 +1,11 @@
-# Data Structures
+# Data Structures (WORK IN PROGRESS)
 - My implementation of the different data structures and the key operations I am learning to be familiarized with them
 - The tables below just makes it easier to navigate to the files and the operations I've implemented.
-- Data structures are implemented in cpp, python, and hopefully Java and Javascript.
+- Data structures are implemented in cpp, python, and hopefully Java and Javascript all in one repo soon one day.
 
 <h1>Table of Content</h1>
 
-- [Data Structures](#data-structures)
+- [Data Structures (WORK IN PROGRESS)](#data-structures-work-in-progress)
   - [Summary of Complexity of each operation based on Structure](#summary-of-complexity-of-each-operation-based-on-structure)
   - [Python](#python)
   - [CPP](#cpp)
