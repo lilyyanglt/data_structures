@@ -28,6 +28,7 @@
 - its also a complete binary tree
 
 ## Balanced Binary Tree
+- leetcode definition: a bst is balanced if and only if the height of the 2 subtrees never differ by more than one
 - Difference between the height of left and right subtree for every node is not more than 1
 - difference = $|height of left subtree - height of right subtree|$
 - If there are N total nodes, the depth is roughly log(n) - n is the total number of nodes
@@ -84,7 +85,7 @@ int f(int n) {
 
 ## Binary Tree Traversal
 
-* There are 3 types of traversal: pre-order, in-order, and post-order, and the most common one is in-order.
+* There are 2 types of traversal, you can do Breadth first search, or Depth first search and in depth first search, you can do: pre-order, in-order, and post-order, and the most common one is in-order.
 
 ### in-order
 - in-order means to 'visit'( or print) the left branch, then the current node, and finally the right branch

@@ -20,8 +20,16 @@
 1. `push` (add items on top of the stack)
 2. `pop` (remove items from top of the stack and return the item)
 3. `peek` (get the element from the top of the stack, but no removal of the item)
-4. searching (O(n) - traverse all the items in the stack)
-5. size (O(1))
+4. `searching` (O(n) - traverse all the items in the stack)
+5. `size` (O(1))
+
+## Key Operations and Time Complexity
+
+| operation | runtime |
+| --------- | ------- |
+| `push(value)` <li>Adds an item to the stack</li> | <li>O(1) - this is only if you use a linkedlist with tail and head pointer</li> |
+|  `pop` (remove items from top of the stack and return the item) | <li> O(1)</li> |
+| `peek` (get the element from the top of the stack, but no removal of the item) synonym is `getTop()` | <li>O(1)</li> | 
 
 ## Famous algorithm problems using stack
 

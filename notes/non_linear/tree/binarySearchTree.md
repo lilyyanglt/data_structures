@@ -1,6 +1,6 @@
 # Binary Search Tree (BST)
 
-- it's an efficient structure to organize data for quick search and quick update
+- it's an efficient structure to organize data for quick search and quick update (if BST is implemented using a balanced binary tree)
 - for each node, the value of all the nodes in the left subtree is lesser than or equal to and value of all the nodes in the right subtree is greater. 
 
       [8]

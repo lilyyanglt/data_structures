@@ -3,7 +3,7 @@
 
 - Tree is a non-linear data structure
 - it's actually a special kind of graph, but has properties to show when a graph is actually a tree
-- it's a collection of nodes linked together to similate a hierarchy
+- it's a collection of nodes linked together to simulate a hierarchy
 - if a tree has N nodes, then the number of edges it has will always be N - 1. Sometimes the nodes might not have data yet like the nodes at the very end.
 - trees can also be referred to as a recrusive data structure
 
@@ -45,7 +45,7 @@
 * AVL Tree
   * AVL stands for Adelson-Velsky and Landis, and it's a self-balancing binary search tree
 * Binary Search Tree
-  * This is a Binary Tree but sorted
+  * this is a binary tree but the left of the node is always less than or equal to the root and the right of the node is always greater than the root for every single node
 * Binary Tree
   * Is a tree with at most 2 children
 * Fenwick Tree
